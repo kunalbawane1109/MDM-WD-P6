@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title> PRACTICAL NO 6</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-cyan-400 via-rose-300 to-blue-200 min-h-screen flex justify-center items-center">
+
+<div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-2xl">
+
+<h1 class="text-3xl font-bold text-center text-indigo-700">PRACTICAL NO. 6</h1>
+<h3 class="text-2xl font-semibold text-center text-gray-900 mb-6">Marks Calculator</h3>
+
+<table class="w-full text-center border-collapse">
+<tr class="bg-indigo-400 text-white">
+<th class="border p-3">Subject</th>
+<th class="border p-3">SUBJECTS</th>
+<th class="border p-3">MARKS</th>
+</tr>
+
+<tr class="hover:bg-indigo-50">
+<td class="border p-2">1</td>
+<td class="border p-2 font-semibold">CHEMISTRY</td>
+<td class="border p-2"><input type="number" id="s1" placeholder="Enter Marks" class="border rounded p-2 w-full"></td>
+</tr>
+
+<tr class="hover:bg-indigo-50">
+<td class="border p-2">2</td>
+<td class="border p-2 font-semibold">ED</td>
+<td class="border p-2"><input type="number" id="s2" placeholder="Enter Marks" class="border rounded p-2 w-full"></td>
+</tr>
+
+<tr class="hover:bg-indigo-50">
+<td class="border p-2">3</td>
+<td class="border p-2 font-semibold">CAO</td>
+<td class="border p-2"><input type="number" id="s3" placeholder="Enter Marks" class="border rounded p-2 w-full"></td>
+</tr>
+
+<tr class="hover:bg-indigo-50">
+<td class="border p-2">4</td>
+<td class="border p-2 font-semibold">PYTHON</td>
+<td class="border p-2"><input type="number" id="s4" placeholder="Enter Marks" class="border rounded p-2 w-full"></td>
+</tr>
+
+<tr class="hover:bg-indigo-50">
+<td class="border p-2">5</td>
+<td class="border p-2 font-semibold">MDM</td>
+<td class="border p-2"><input type="number" id="s5" placeholder="Enter Marks" class="border rounded p-2 w-full"></td>
+</tr>
+
+<tr>
+<td colspan="3" class="p-4">
+<button onclick="calc()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg">
+Calculate
+</button>
+</td>
+</tr>
+</table>
+
+<div class="mt-6 text-center">
+<h1 class="text-xl font-bold text-indigo-700">TOTAL MARKS</h1>
+<h1 id="totalMarks" class="text-3xl font-bold text-gray-800"></h1>
+
+<h3 class="text-xl font-bold text-purple-700 mt-4">Percent</h3>
+<h3 id="percent" class="text-2xl font-bold text-gray-800"></h3>
+
+<h3 class="text-xl font-bold text-pink-600 mt-4">GRADE</h3>
+<h3 id="grade" class="text-3xl font-bold text-gray-800"></h3>
+</div>
+
+<script>
+function calc(){
+let sub1=Number(document.getElementById("s1").value);
+let sub2=Number(document.getElementById("s2").value);
+let sub3=Number(document.getElementById("s3").value);
+let sub4=Number(document.getElementById("s4").value);
+let sub5=Number(document.getElementById("s5").value);
+let total=sub1+sub2+sub3+sub4+sub5;
+let per=(total/500)*100;
+let Grade;
+
+if(per>=75) Grade="A";
+else if(per>=65) Grade="B";
+else if(per>=55) Grade="C";
+else if(per>=40) Grade="D";
+else Grade="F";
+
+document.getElementById("totalMarks").innerHTML=total;
+document.getElementById("percent").innerHTML=per+"%";
+document.getElementById("grade").innerHTML=Grade;
+}
+</script>
+
+</div>
+</body>
+</html>
